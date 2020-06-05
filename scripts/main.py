@@ -4,19 +4,17 @@
 # actions of the other parts of the analysis chain.
 #
 
-from download import download_data
-from data_exploration import (
-    get_data,
-    impute_missing_values,
-    continuous_features_plot,
-    categorical_features_plot,
-    univariate_table,
-)
-from train import one_hot_expand, split_and_normalise, train_model
-from evaluation import proba_hist, eval_metrics, roc_plot, extract_model_params
-import numpy as np
-import pickle
 import os
+import pickle
+
+import numpy as np
+
+from data_exploration import (categorical_features_plot,
+                              continuous_features_plot, get_data,
+                              impute_missing_values, univariate_table)
+from download import download_data
+from evaluation import eval_metrics, extract_model_params, proba_hist, roc_plot
+from train import one_hot_expand, split_and_normalise, train_model
 
 OUTPUT_DIR = "outputs"
 
